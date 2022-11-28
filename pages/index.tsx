@@ -1,6 +1,7 @@
 import { Box, Heading, Button } from "@chakra-ui/react";
 import { Carousel } from "../components/Carousel";
 import { ImageGrid } from "../components/ImageGrid";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   const slides = Array.from(Array(10).keys()).map((slide) => {
@@ -41,6 +42,7 @@ export default function Home() {
         </Heading>
         {/* IMAGE GRID */}
         <ImageGrid />
+        <Footer />
       </Box>
     </Box>
   );
