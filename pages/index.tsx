@@ -3,10 +3,9 @@ import { Carousel } from "../components/Carousel";
 import { ImageGrid } from "../components/ImageGrid";
 
 export default function Home() {
-  const slides = [
-    "headshots/Olivia Beardsley-9058.jpg",
-    "headshots/Olivia Beardsley-8798.jpg",
-  ];
+  const slides = Array.from(Array(10).keys()).map((slide) => {
+    return `headshots/${slide + 1}.jpg`;
+  });
 
   return (
     <Box>
