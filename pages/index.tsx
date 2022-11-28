@@ -35,6 +35,7 @@ export default function Home() {
           size="lg"
           color="blackAlpha.800"
           mt={10}
+          mb={3}
         >
           Portfolio
         </Heading>
