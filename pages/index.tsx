@@ -1,9 +1,7 @@
 import {
   Box,
   Heading,
-  Button,
   Flex,
-  SimpleGrid,
   Container,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -16,7 +14,7 @@ import { Socials } from "../components/Socials";
 export default function Home() {
   const bg = useColorModeValue("white", "gray.800");
   const slides = Array.from(Array(10).keys()).map((slide) => {
-    return `headshots/${slide + 1}.jpg`;
+    return `/headshots/${slide + 1}.jpg`;
   });
 
   return (

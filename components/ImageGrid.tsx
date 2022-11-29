@@ -1,4 +1,5 @@
-import { GridItem, Grid, Image } from "@chakra-ui/react";
+import { GridItem, Grid } from "@chakra-ui/react";
+import NextImage from "next/image";
 
 interface ImageGridProps {}
 
@@ -30,7 +31,13 @@ export const ImageGrid: React.FC<ImageGridProps> = ({}) => {
     >
       {images.map(({ image, row, col }) => (
         <GridItem rowSpan={row} colSpan={col} overflow="hidden" key={image}>
-          <Image src={`headshots/${image}.jpg`} fit="contain" alt="Olivia" />
+          <NextImage
+            src={`/headshots/${image}.jpg`}
+            objectFit="contain"
+            alt="Olivia"
+            width={680}
+            height={850}
+          />
         </GridItem>
       ))}
     </Grid>
