@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import { Image } from "@chakra-ui/react";
+import { Image, Flex } from "@chakra-ui/react";
 
 interface CarouselProps {
   slides: string[];
@@ -53,17 +53,24 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
             ))}
           </div>
         </div>
+        <Flex
+          width="100%"
+          position="absolute"
+          bottom="12%"
+          justifyContent="center"
+        >
+          <div className="embla__dots">
+            {scrollSnaps.map((_: any, index: number) => (
+              <DotButton
+                key={index}
+                selected={index === selectedIndex}
+                onClick={() => scrollTo(index)}
+              />
+            ))}
+          </div>
+        </Flex>
         <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
         <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-      </div>
-      <div className="embla__dots">
-        {scrollSnaps.map((_: any, index: number) => (
-          <DotButton
-            key={index}
-            selected={index === selectedIndex}
-            onClick={() => scrollTo(index)}
-          />
-        ))}
       </div>
     </>
   );

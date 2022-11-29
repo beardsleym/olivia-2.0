@@ -64,7 +64,7 @@
   touch-action: manipulation;
   position: absolute;
   z-index: 1;
-  top: 50%;
+  bottom: 3%;
   transform: translateY(-50%);
   border: 0;
   width: 30px;
@@ -86,11 +86,11 @@
 }
 
 .embla__button--prev {
-  left: 27px;
+  left: 24px;
 }
 
 .embla__button--next {
-  right: 27px;
+  right: 24px;
 }
 
 .embla__dots {
@@ -98,6 +98,10 @@
   list-style: none;
   justify-content: center;
   padding-top: 10px;
+  position: absolute;
+  z-index: 1;
+  /* bottom: 5%; */
+  width: 60%;
 }
 
 .embla__dot {
@@ -124,6 +128,7 @@
 }
 
 .embla__dot.is-selected:after {
-  background-color: #1bcacd;
+  background-color: #0000007a;
+  /* width: 20px; */
   opacity: 1;
 }
