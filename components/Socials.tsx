@@ -11,8 +11,8 @@ interface SocialsProps {}
 
 export const Socials: React.FC<SocialsProps> = ({}) => {
   return (
-    <Flex mt={4} justifyContent="space-between" alignItems="center">
-      <Divider w={20} color="blackAlpha.500" borderWidth="1px" />
+    <Flex mt={4} justifyContent="space-between" alignItems="center" gap={1}>
+      <Divider color="blackAlpha.500" borderWidth="1px" />
       <IconButton
         variant="text"
         aria-label="social"
@@ -43,7 +43,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
         aria-label="social"
         icon={<MailIcon color="black" h={6} w={6} />}
       />
-      <Divider w={20} color="blackAlpha.500" borderWidth="1px" />
+      <Divider color="blackAlpha.500" borderWidth="1px" />
     </Flex>
   );
 };
