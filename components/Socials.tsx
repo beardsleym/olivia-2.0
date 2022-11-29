@@ -20,7 +20,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
       mt={8}
       justifyContent="space-between"
       alignItems="center"
-      gap={1}
+      gap={{ base: 1, sm: 4 }}
       mb={{ base: 4, md: 8 }}
       flexDirection={{ base: "row", md: "column" }}
     >
