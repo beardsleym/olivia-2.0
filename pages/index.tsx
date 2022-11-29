@@ -5,6 +5,7 @@ import {
   Flex,
   SimpleGrid,
   Container,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Carousel } from "../components/Carousel";
 import { ImageGrid } from "../components/ImageGrid";
@@ -13,12 +14,13 @@ import { Body } from "../components/Body";
 import { Socials } from "../components/Socials";
 
 export default function Home() {
+  const bg = useColorModeValue("white", "gray.800");
   const slides = Array.from(Array(10).keys()).map((slide) => {
     return `headshots/${slide + 1}.jpg`;
   });
 
   return (
-    <Container maxW="7xl" padding={0}>
+    <Container maxW="7xl" padding={0} bg={bg}>
       <Flex
         direction={{ base: "column", md: "row" }}
         px={{ base: 0, sm: 16, md: 7, lg: 16, xl: 32 }}
@@ -39,7 +41,7 @@ export default function Home() {
           variant="h3"
           fontWeight="semibold"
           size="lg"
-          color="blackAlpha.800"
+          color={useColorModeValue("blackAlpha.800", "white")}
           mt={10}
           mb={3}
         >

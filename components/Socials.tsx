@@ -1,6 +1,5 @@
-import { Flex, Divider, IconButton } from "@chakra-ui/react";
+import { Flex, Divider, IconButton, useColorModeValue } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
-import { ChevronLeftIcon } from "@chakra-ui/icons";
 import { AudibleIcon } from "../assets/Audible";
 import { TwitterIcon } from "../assets/Twitter";
 import { InstagramIcon } from "../assets/Instagram";
@@ -15,6 +14,50 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
     base: "horizontal",
     md: "vertical",
   });
+  const socialIcons = [
+    <AudibleIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="audible"
+    />,
+    <TwitterIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="twitter"
+    />,
+    <InstagramIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="instagram"
+    />,
+    <InfoIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="info"
+    />,
+    <IMDBIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="imdb"
+    />,
+    <MailIcon
+      color={useColorModeValue("black", "white")}
+      h={6}
+      w={6}
+      m={6}
+      key="mail"
+    />,
+  ];
   return (
     <Flex
       mt={8}
@@ -25,42 +68,21 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
       flexDirection={{ base: "row", md: "column" }}
     >
       <Divider
-        color="blackAlpha.500"
+        color={useColorModeValue("blackAlpha.500", "white")}
         borderWidth="1px"
         orientation={orientation}
       />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<AudibleIcon color="black" h={6} w={6} m={6} />}
-      />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<TwitterIcon color="black" h={6} w={6} m={6} />}
-      />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<InstagramIcon color="black" h={6} w={6} m={6} />}
-      />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<InfoIcon color="black" h={6} w={6} m={6} />}
-      />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<IMDBIcon color="black" h={6} w={6} m={6} />}
-      />
-      <IconButton
-        variant="text"
-        aria-label="social"
-        icon={<MailIcon color="black" h={6} w={6} m={6} />}
-      />
+      {socialIcons.map((icon) => (
+        <IconButton
+          variant="text"
+          aria-label="social"
+          icon={icon}
+          key={icon.key}
+        />
+      ))}
+
       <Divider
-        color="blackAlpha.500"
+        color={useColorModeValue("blackAlpha.500", "white")}
         borderWidth="1px"
         orientation={orientation}
       />

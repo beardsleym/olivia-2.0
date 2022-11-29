@@ -1,4 +1,6 @@
 import Header from "./header";
+import { ColorModeScript } from "@chakra-ui/react";
+import { theme } from "../styles/theme";
 
 export default function RootLayout({
   children,
@@ -12,7 +14,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <Header />
-      <body>{children}</body>
+      <body>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        {children}
+      </body>
     </html>
   );
 }
