@@ -17,7 +17,13 @@ export const ImageGrid: React.FC<ImageGridProps> = ({}) => {
   ];
   return (
     <Grid
-      h="920px"
+      h={{
+        base: "920px",
+        sm: "1240px",
+        md: "1500px",
+        lg: "2160px",
+        xl: "3000px",
+      }}
       templateRows="repeat(14, 1fr)"
       templateColumns="repeat(12, 1fr)"
       gap={3}
