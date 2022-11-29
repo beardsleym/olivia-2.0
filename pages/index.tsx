@@ -3,6 +3,7 @@ import { Carousel } from "../components/Carousel";
 import { ImageGrid } from "../components/ImageGrid";
 import { Footer } from "../components/Footer";
 import { Body } from "../components/Body";
+import { Socials } from "../components/Socials";
 
 export default function Home() {
   const slides = Array.from(Array(10).keys()).map((slide) => {
@@ -13,6 +14,7 @@ export default function Home() {
     <Box>
       <Carousel slides={slides} />
       <Box p={5}>
+        <Socials />
         <Body />
         <Heading
           variant="h3"
