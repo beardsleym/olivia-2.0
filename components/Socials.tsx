@@ -6,6 +6,7 @@ import { InstagramIcon } from "../assets/Instagram";
 import { MailIcon } from "../assets/Mail";
 import { InfoIcon } from "../assets/Info";
 import { IMDBIcon } from "../assets/IMDB";
+import NextLink from "next/link";
 
 interface SocialsProps {}
 
@@ -15,48 +16,78 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
     md: "vertical",
   });
   const socialIcons = [
-    <AudibleIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="audible"
-    />,
-    <TwitterIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="twitter"
-    />,
-    <InstagramIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="instagram"
-    />,
-    <InfoIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="info"
-    />,
-    <IMDBIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="imdb"
-    />,
-    <MailIcon
-      color={useColorModeValue("black", "white")}
-      h={6}
-      w={6}
-      m={6}
-      key="mail"
-    />,
+    {
+      icon: (
+        <AudibleIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="audible"
+        />
+      ),
+      href: "https://www.amazon.co.uk/s?k=Olivia+Beardsley&i=audible&ref=adbl_dp_pd_narr",
+    },
+    {
+      icon: (
+        <TwitterIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="twitter"
+        />
+      ),
+      href: "https://twitter.com/olliebeardsley",
+    },
+    {
+      icon: (
+        <InstagramIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="instagram"
+        />
+      ),
+      href: "https://www.instagram.com/missollie/",
+    },
+    {
+      icon: (
+        <InfoIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="info"
+        />
+      ),
+      href: "http://www.spotlight.com/interactive/cv/9177-8972-2432",
+    },
+    {
+      icon: (
+        <IMDBIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="imdb"
+        />
+      ),
+      href: "https://www.imdb.com/name/nm6371549",
+    },
+    {
+      icon: (
+        <MailIcon
+          color={useColorModeValue("black", "white")}
+          h={6}
+          w={6}
+          m={6}
+          key="mail"
+        />
+      ),
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSep5mHDqbUovGMIdyj2KvBUPPIMD170bpD7WH58ADaYHWvDjA/viewform?usp=sf_link",
+    },
   ];
   return (
     <Flex
@@ -72,12 +103,14 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
         borderWidth="1px"
         orientation={orientation}
       />
-      {socialIcons.map((icon) => (
+      {socialIcons.map(({ icon, href }) => (
         <IconButton
+          as={NextLink}
           variant="text"
           aria-label="social"
           icon={icon}
           key={icon.key}
+          href={href}
         />
       ))}
 
