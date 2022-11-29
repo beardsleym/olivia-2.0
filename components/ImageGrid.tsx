@@ -33,10 +33,11 @@ export const ImageGrid: React.FC<ImageGridProps> = ({}) => {
         <GridItem rowSpan={row} colSpan={col} overflow="hidden" key={image}>
           <NextImage
             src={`/headshots/${image}.jpg`}
-            objectFit="contain"
+            style={{ objectFit: "contain" }}
             alt="Olivia"
             width={680}
             height={850}
+            priority
           />
         </GridItem>
       ))}

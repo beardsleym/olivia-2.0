@@ -46,11 +46,13 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
                 <div className="embla__slide__inner">
                   <NextImage
                     className="embla__slide__img"
-                    objectFit="contain"
+                    style={{ objectFit: "cover" }}
                     alt="Olivia"
                     width={550}
                     height={775}
                     src={slide}
+                    priority
+                    quality={95}
                   />
                 </div>
               </div>
