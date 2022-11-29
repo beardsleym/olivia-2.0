@@ -5,7 +5,13 @@ interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = ({}) => {
   return (
-    <Flex height={16} pt={5} justifyContent="space-between" alignItems="center">
+    <Flex
+      height={16}
+      pt={5}
+      pb={{ base: 0, md: 16 }}
+      justifyContent="space-between"
+      alignItems="center"
+    >
       <Text fontSize="xs" color="blackAlpha.800">
         © Olivia Beardsley
       </Text>

@@ -1,10 +1,14 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
+import { Flex, Heading, Button } from "@chakra-ui/react";
 
 interface BodyProps {}
 
 export const Body: React.FC<BodyProps> = ({}) => {
   return (
-    <>
+    <Flex
+      direction="column"
+      justifyContent="center"
+      px={{ base: 5, md: 7, lg: 16 }}
+    >
       <Heading variant="h1" size="2xl" color="blackAlpha.800">
         Olivia
       </Heading>
@@ -20,9 +24,14 @@ export const Body: React.FC<BodyProps> = ({}) => {
       >
         Actor / Voice Artist / Singer
       </Heading>
-      <Button colorScheme="blackAlpha" variant="outline" mt={7}>
+      <Button
+        colorScheme="blackAlpha"
+        variant="outline"
+        w={"32"}
+        mt={{ base: 7, md: 10 }}
+      >
         Contact
       </Button>
-    </>
+    </Flex>
   );
 };

@@ -1,4 +1,11 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Button,
+  Flex,
+  SimpleGrid,
+  Container,
+} from "@chakra-ui/react";
 import { Carousel } from "../components/Carousel";
 import { ImageGrid } from "../components/ImageGrid";
 import { Footer } from "../components/Footer";
@@ -11,11 +18,23 @@ export default function Home() {
   });
 
   return (
-    <Box>
-      <Carousel slides={slides} />
-      <Box p={5}>
-        <Socials />
-        <Body />
+    <Container maxW="7xl" padding={0}>
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        px={{ base: 0, sm: 16, md: 7, lg: 16, xl: 32 }}
+      >
+        <Box flexGrow={4}>
+          <Carousel slides={slides} />
+        </Box>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          order={{ base: 0, md: -1 }}
+        >
+          <Socials />
+          <Body />
+        </Flex>
+      </Flex>
+      <Box px={{ base: 5, md: 32 }}>
         <Heading
           variant="h3"
           fontWeight="semibold"
@@ -30,6 +49,6 @@ export default function Home() {
         <ImageGrid />
         <Footer />
       </Box>
-    </Box>
+    </Container>
   );
 }
