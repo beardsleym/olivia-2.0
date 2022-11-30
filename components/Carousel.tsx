@@ -52,7 +52,6 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
                     height={775}
                     src={slide}
                     priority
-                    quality={95}
                   />
                 </div>
               </div>
