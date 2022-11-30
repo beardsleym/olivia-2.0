@@ -1,12 +1,14 @@
 import { Flex, Divider, IconButton, useColorModeValue } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
-import { AudibleIcon } from "../assets/Audible";
-import { TwitterIcon } from "../assets/Twitter";
-import { InstagramIcon } from "../assets/Instagram";
-import { MailIcon } from "../assets/Mail";
-import { InfoIcon } from "../assets/Info";
-import { IMDBIcon } from "../assets/IMDB";
 import NextLink from "next/link";
+import {
+  AudibleIcon,
+  IMDBIcon,
+  InstagramIcon,
+  MailIcon,
+  SpotlightIcon,
+  TwitterIcon,
+} from "../assets/Icons";
 
 interface SocialsProps {}
 
@@ -54,12 +56,12 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
     },
     {
       icon: (
-        <InfoIcon
+        <SpotlightIcon
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
           m={6}
-          key="info"
+          key="spotlight"
         />
       ),
       href: "http://www.spotlight.com/interactive/cv/9177-8972-2432",
