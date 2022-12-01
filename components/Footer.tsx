@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
         fontSize="xs"
         color={useColorModeValue("blackAlpha.800", "white")}
       >
-        Check out Showcase 2020
+        Check out showcasebase.com
       </Link>
     </Flex>
   );
