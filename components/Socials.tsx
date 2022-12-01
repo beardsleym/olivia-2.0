@@ -1,4 +1,10 @@
-import { Flex, Divider, IconButton, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Divider,
+  IconButton,
+  useColorModeValue,
+  Tooltip,
+} from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import {
@@ -17,6 +23,10 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
     base: "horizontal",
     md: "vertical",
   });
+  const tooltipPosition = useBreakpointValue<any>({
+    base: "bottom",
+    md: "right",
+  });
   const socialIcons = [
     {
       icon: (
@@ -25,7 +35,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="audible"
+          key="Amazon Audible"
         />
       ),
       href: "https://www.amazon.co.uk/s?k=Olivia+Beardsley&i=audible&ref=adbl_dp_pd_narr",
@@ -37,7 +47,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="twitter"
+          key="Twitter"
         />
       ),
       href: "https://twitter.com/olliebeardsley",
@@ -49,7 +59,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="instagram"
+          key="Instagram"
         />
       ),
       href: "https://www.instagram.com/missollie/",
@@ -61,7 +71,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="spotlight"
+          key="Spotlight Casting"
         />
       ),
       href: "http://www.spotlight.com/interactive/cv/9177-8972-2432",
@@ -73,7 +83,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="imdb"
+          key="IMDB"
         />
       ),
       href: "https://www.imdb.com/name/nm6371549",
@@ -85,7 +95,7 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
           h={6}
           w={6}
           m={6}
-          key="mail"
+          key="e-mail"
         />
       ),
       href: "https://docs.google.com/forms/d/e/1FAIpQLSep5mHDqbUovGMIdyj2KvBUPPIMD170bpD7WH58ADaYHWvDjA/viewform?usp=sf_link",
@@ -106,14 +116,15 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
         orientation={orientation}
       />
       {socialIcons.map(({ icon, href }) => (
-        <IconButton
-          as={NextLink}
-          variant="text"
-          aria-label="social"
-          icon={icon}
-          key={icon.key}
-          href={href}
-        />
+        <Tooltip label={icon.key} placement={tooltipPosition} key={icon.key}>
+          <IconButton
+            as={NextLink}
+            variant="text"
+            aria-label="social"
+            icon={icon}
+            href={href}
+          />
+        </Tooltip>
       ))}
 
       <Divider
