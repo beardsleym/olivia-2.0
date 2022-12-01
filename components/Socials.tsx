@@ -119,8 +119,9 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
         <Tooltip label={icon.key} placement={tooltipPosition} key={icon.key}>
           <IconButton
             as={NextLink}
-            variant="text"
+            variant="ghost"
             aria-label="social"
+            rounded="full"
             icon={icon}
             href={href}
           />
