@@ -37,6 +37,10 @@ export const Body: React.FC<BodyProps> = ({}) => {
         variant="outline"
         w={"32"}
         mt={{ base: 7, md: 10 }}
+        _hover={{
+          backgroundColor: useColorModeValue("blackAlpha.600", "white"),
+          color: useColorModeValue("white", "blackAlpha.800"),
+        }}
       >
         Contact
       </Button>
