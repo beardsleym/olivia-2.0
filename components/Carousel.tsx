@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 interface CarouselProps {
@@ -44,14 +44,14 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
             {slides.map((slide, index) => (
               <div className="embla__slide" key={index}>
                 <div className="embla__slide__inner">
-                  <NextImage
+                  <Image
                     className="embla__slide__img"
                     style={{ objectFit: "cover" }}
                     alt="Olivia"
-                    width={550}
-                    height={775}
+                    // width={1000}
+                    // height={1000}
                     src={slide}
-                    priority
+                    // priority
                   />
                 </div>
               </div>

@@ -42,7 +42,7 @@ export const ImageGrid: React.FC<ImageGridProps> = ({}) => {
             priority
           /> */}
           <Image
-            src={`/images/${image}.jpg`}
+            src={`/avif/${image}.avif`}
             style={{
               objectFit: "contain",
             }}

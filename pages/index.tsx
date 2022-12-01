@@ -14,7 +14,7 @@ import { Socials } from "../components/Socials";
 export default function Home() {
   const bg = useColorModeValue("white", "gray.800");
   const slides = Array.from(Array(10).keys()).map((slide) => {
-    return `/images/${slide + 1}.jpg`;
+    return `/avif/${slide + 1}.avif`;
   });
 
   return (
