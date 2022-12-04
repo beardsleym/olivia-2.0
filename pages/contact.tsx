@@ -1,7 +1,7 @@
 import {
   Box,
   Heading,
-  Flex,
+  Center,
   Container,
   useColorModeValue,
   Image,
@@ -52,18 +52,25 @@ export default function Home() {
         >
           Contact
         </Heading>
-        <Text color={useColorModeValue("blackAlpha.600", "whiteAlpha.600")}>
-          Lorem ipsum dolor sit amet consectetur. Nullam feugiat quam malesuada
-          ultrices magna ornare malesuada ullamcorper. Orci nec ipsum sit amet
-          sit.
-        </Text>
+        <Center>
+          <Text
+            maxW="md"
+            color={useColorModeValue("blackAlpha.600", "whiteAlpha.600")}
+          >
+            Lorem ipsum dolor sit amet consectetur. Nullam feugiat quam
+            malesuada ultrices magna ornare malesuada ullamcorper. Orci nec
+            ipsum sit amet sit.
+          </Text>
+        </Center>
       </Box>
       <Box
         backgroundColor={useColorModeValue("white", "gray.900")}
         py={10}
         px={5}
       >
-        <ContactForm />
+        <Center>
+          <ContactForm />
+        </Center>
       </Box>
       <Box px={5}>
         <Footer />
