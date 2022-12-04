@@ -20,8 +20,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
     text: "a",
   });
   return (
-    <form name="contact" method="POST" data-netlify="true">
-      <FormControl>
+    <FormControl>
+      <form name="contact" method="POST" data-netlify="true">
         <FormLabel>Name</FormLabel>
         <Input placeholder="Name" mb={5} name="name" />
         <FormLabel>Email</FormLabel>
@@ -46,7 +46,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
         >
           Submit
         </Button>
-      </FormControl>
-    </form>
+      </form>
+    </FormControl>
   );
 };

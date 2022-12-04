@@ -37,7 +37,7 @@ export default function Home() {
         >
           Olivia Beardsley
         </Heading>
-        <Socials />
+        <Socials iconsRight horizontalOnly />
         <AspectRatio ratio={2 / 1}>
           <Image src="avif/4.avif" alt="olivia" />
         </AspectRatio>
@@ -65,7 +65,9 @@ export default function Home() {
       >
         <ContactForm />
       </Box>
-      <Footer />
+      <Box px={5}>
+        <Footer />
+      </Box>
     </Container>
   );
 }

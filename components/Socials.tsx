@@ -16,17 +16,26 @@ import {
   TwitterIcon,
 } from "../assets/Icons";
 
-interface SocialsProps {}
+interface SocialsProps {
+  iconsRight?: boolean;
+  horizontalOnly?: boolean;
+}
 
-export const Socials: React.FC<SocialsProps> = ({}) => {
+export const Socials: React.FC<SocialsProps> = ({
+  iconsRight = false,
+  horizontalOnly = false,
+}) => {
+  console.log(horizontalOnly);
   const orientation = useBreakpointValue<any>({
     base: "horizontal",
-    md: "vertical",
+    md: horizontalOnly ? "horizontal" : "vertical",
   });
   const tooltipPosition = useBreakpointValue<any>({
     base: "bottom",
     md: "right",
   });
+
+  const color = useColorModeValue("blackAlpha.500", "white");
   const socialIcons = [
     {
       icon: (
@@ -108,13 +117,9 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
       alignItems="center"
       gap={{ base: 1, sm: 4 }}
       mb={{ base: 4, md: 8 }}
-      flexDirection={{ base: "row", md: "column" }}
+      flexDirection={{ base: "row", md: horizontalOnly ? "row" : "column" }}
     >
-      <Divider
-        color={useColorModeValue("blackAlpha.500", "white")}
-        borderWidth="1px"
-        orientation={orientation}
-      />
+      <Divider color={color} borderWidth="1px" orientation={orientation} />
       {socialIcons.map(({ icon, href }) => (
         <Tooltip label={icon.key} placement={tooltipPosition} key={icon.key}>
           <IconButton
@@ -128,11 +133,9 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
         </Tooltip>
       ))}
 
-      <Divider
-        color={useColorModeValue("blackAlpha.500", "white")}
-        borderWidth="1px"
-        orientation={orientation}
-      />
+      {!iconsRight && (
+        <Divider color={color} borderWidth="1px" orientation={orientation} />
+      )}
     </Flex>
   );
 };
