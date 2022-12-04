@@ -1,8 +1,10 @@
 import { Flex, Heading, Button, useColorModeValue } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 interface BodyProps {}
 
 export const Body: React.FC<BodyProps> = ({}) => {
+  const router = useRouter();
   return (
     <Flex
       direction="column"
@@ -41,6 +43,7 @@ export const Body: React.FC<BodyProps> = ({}) => {
           backgroundColor: useColorModeValue("blackAlpha.600", "white"),
           color: useColorModeValue("white", "blackAlpha.800"),
         }}
+        onClick={() => router.push("/contact")}
       >
         Contact
       </Button>
