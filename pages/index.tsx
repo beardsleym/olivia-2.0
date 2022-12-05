@@ -29,6 +29,8 @@ export default function Home() {
         <Flex
           direction={{ base: "column", md: "row" }}
           order={{ base: 0, md: -1 }}
+          mt={8}
+          mb={{ base: 4, md: 8 }}
         >
           <Socials />
           <Body />

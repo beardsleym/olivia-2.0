@@ -25,7 +25,6 @@ export const Socials: React.FC<SocialsProps> = ({
   iconsRight = false,
   horizontalOnly = false,
 }) => {
-  console.log(horizontalOnly);
   const orientation = useBreakpointValue<any>({
     base: "horizontal",
     md: horizontalOnly ? "horizontal" : "vertical",
@@ -112,11 +111,9 @@ export const Socials: React.FC<SocialsProps> = ({
   ];
   return (
     <Flex
-      mt={8}
       justifyContent="space-between"
       alignItems="center"
       gap={{ base: 1, sm: 4 }}
-      mb={{ base: 4, md: 8 }}
       flexDirection={{ base: "row", md: horizontalOnly ? "row" : "column" }}
     >
       <Divider color={color} borderWidth="1px" orientation={orientation} />

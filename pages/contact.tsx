@@ -7,7 +7,10 @@ import {
   Image,
   AspectRatio,
   Text,
+  Flex,
 } from "@chakra-ui/react";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 import { ImageGrid } from "../components/ImageGrid";
 import { Footer } from "../components/Footer";
 import { Body } from "../components/Body";
@@ -27,19 +30,30 @@ export default function Home() {
         pb={10}
         px={5}
       >
-        <Heading
-          variant="h2"
-          fontWeight="semibold"
-          size="lg"
-          color={useColorModeValue("blackAlpha.800", "white")}
-          mb={3}
-          mt={2}
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          flexWrap="wrap"
+          mb={5}
         >
-          Olivia Beardsley
-        </Heading>
-        <Socials iconsRight horizontalOnly />
+          <NextLink href="/">
+            <Heading
+              variant="h2"
+              fontWeight="semibold"
+              size="lg"
+              color={useColorModeValue("blackAlpha.800", "white")}
+              mb={3}
+              mt={2}
+            >
+              <ChevronLeftIcon h={10} w={10} /> Olivia Beardsley
+            </Heading>
+          </NextLink>
+          <Box>
+            <Socials iconsRight horizontalOnly />
+          </Box>
+        </Flex>
         <AspectRatio ratio={2 / 1}>
-          <Image src="avif/4.avif" alt="olivia" />
+          <Image src="avif/4.avif" alt="olivia" rounded="md" />
         </AspectRatio>
         <Heading
           variant="h2"
