@@ -63,9 +63,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
     <FormControl maxW="md">
       <form
         name="contact"
-        method="POST"
+        // method="POST"
         // data-netlify="true"
-        action="https://floral-pond-b830.uv.workers.dev"
+        // action="https://floral-pond-b830.uv.workers.dev"
         onSubmit={handleSubmit}
       >
         <FormLabel>Name</FormLabel>
