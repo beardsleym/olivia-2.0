@@ -28,10 +28,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(data),
       });
       console.log({ response });
     } catch (error) {
