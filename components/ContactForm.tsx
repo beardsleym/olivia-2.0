@@ -8,22 +8,34 @@ import {
   Input,
   Button,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
 interface ContactFormProps {}
 
 export const ContactForm: React.FC<ContactFormProps> = ({}) => {
+  const toast = useToast();
   const bgColor = useColorModeValue("gray.100", "gray.800");
   const [isLoading, setIsLoading] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const clearForm = () => {
+    setContactForm({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
   const handleSubmit = async (event: any) => {
     setIsLoading(true);
-    const url = "https://floral-pond-b830.uv.workers.dev";
+    const url = "https://olivia-contact-form.uv.workers.dev";
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-
-    console.log("form submitted ✅", data);
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -33,17 +45,27 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
         body: JSON.stringify(data),
       });
       console.log({ response });
-    } catch (error) {
+      toast({
+        title: "Message sent",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+      clearForm();
+    } catch (error: any) {
       console.log("form error: ", error);
+      toast({
+        title: "Error sending message",
+        description: error?.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
     } finally {
       setIsLoading(false);
     }
   };
-  const [contactForm, setContactForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+
   const handleInputChange = (
     type: string,
     e:
