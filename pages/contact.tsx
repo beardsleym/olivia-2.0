@@ -47,7 +47,7 @@ export default function Home() {
             <Socials iconsRight horizontalOnly />
           </Box>
         </Flex>
-        <AspectRatio ratio={2 / 1}>
+        <AspectRatio ratio={2 / 1} maxW="2xl" margin="auto">
           <Image src="avif/4.avif" alt="olivia" rounded="md" />
         </AspectRatio>
         <Heading

@@ -1,5 +1,6 @@
 import {
   Flex,
+  Box,
   Divider,
   IconButton,
   useColorModeValue,
@@ -42,7 +43,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="Amazon Audible"
         />
       ),
@@ -54,7 +55,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="Twitter"
         />
       ),
@@ -66,7 +67,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="Instagram"
         />
       ),
@@ -78,7 +79,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="Spotlight Casting"
         />
       ),
@@ -90,7 +91,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="IMDB"
         />
       ),
@@ -102,7 +103,7 @@ export const Socials: React.FC<SocialsProps> = ({
           color={useColorModeValue("black", "white")}
           h={6}
           w={6}
-          m={6}
+          m={4}
           key="e-mail"
         />
       ),
@@ -113,7 +114,7 @@ export const Socials: React.FC<SocialsProps> = ({
     <Flex
       justifyContent="space-between"
       alignItems="center"
-      gap={{ base: 1, sm: 4 }}
+      gap={{ base: 0, sm: 4 }}
       flexDirection={{ base: "row", md: horizontalOnly ? "row" : "column" }}
     >
       <Divider color={color} borderWidth="1px" orientation={orientation} />
@@ -129,7 +130,6 @@ export const Socials: React.FC<SocialsProps> = ({
           />
         </Tooltip>
       ))}
-
       {!iconsRight && (
         <Divider color={color} borderWidth="1px" orientation={orientation} />
       )}
