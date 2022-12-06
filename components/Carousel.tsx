@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
-import useEmblaCarousel from "embla-carousel-react";
 import { Flex, Image } from "@chakra-ui/react";
-import NextImage from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
 
 interface CarouselProps {
   slides: string[];

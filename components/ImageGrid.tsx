@@ -1,5 +1,4 @@
-import { GridItem, Grid } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
+import { GridItem, Grid, Image } from "@chakra-ui/react";
 
 interface ImageGridProps {}
 

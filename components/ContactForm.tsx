@@ -1,8 +1,5 @@
 import {
-  Box,
   useColorModeValue,
-  Image,
-  VStack,
   FormControl,
   FormLabel,
   Input,
@@ -37,14 +34,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     try {
-      const response = await fetch(url, {
+      await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      console.log({ response });
       toast({
         title: "Message sent",
         status: "success",
@@ -53,7 +49,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
       });
       clearForm();
     } catch (error: any) {
-      console.log("form error: ", error);
       toast({
         title: "Error sending message",
         description: error?.message,
@@ -77,9 +72,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
       [type]: e.target.value, // But override this one
     });
   };
-  const isDisabled = () => {
-    return !Object.values(contactForm).every((value) => value);
-  };
+  const isDisabled = () => !Object.values(contactForm).every((value) => value);
 
   return (
     <FormControl maxW="md">

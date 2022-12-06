@@ -11,17 +11,12 @@ import {
 } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import { ImageGrid } from "../components/ImageGrid";
 import { Footer } from "../components/Footer";
-import { Body } from "../components/Body";
 import { Socials } from "../components/Socials";
 import { ContactForm } from "../components/ContactForm";
 
 export default function Home() {
   const bg = useColorModeValue("white", "gray.800");
-  const slides = Array.from(Array(10).keys()).map((slide) => {
-    return `/avif/${slide + 1}.avif`;
-  });
 
   return (
     <Container maxW="7xl" padding={0} bg={bg}>

@@ -13,9 +13,9 @@ import { Socials } from "../components/Socials";
 
 export default function Home() {
   const bg = useColorModeValue("white", "gray.800");
-  const slides = Array.from(Array(10).keys()).map((slide) => {
-    return `/avif/${slide + 1}.avif`;
-  });
+  const slides = Array.from(Array(10).keys()).map(
+    (slide) => `/avif/${slide + 1}.avif`
+  );
 
   return (
     <Container maxW="7xl" padding={0} bg={bg}>

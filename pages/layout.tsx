@@ -1,6 +1,6 @@
-import Header from "./header";
 import { ColorModeScript } from "@chakra-ui/react";
 import { theme } from "../styles/theme";
+import Header from "./header";
 
 export default function RootLayout({
   children,
