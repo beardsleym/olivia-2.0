@@ -5,19 +5,12 @@ export interface contactProps {
   message: string;
 }
 
-export interface Env {
-  // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
-  // MY_KV_NAMESPACE: KVNamespace;
+interface Env {
   //
-  // Example binding to Durable Object. Learn more at https://developers.cloudflare.com/workers/runtime-apis/durable-objects/
-  // MY_DURABLE_OBJECT: DurableObjectNamespace;
-  //
-  // Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
-  // MY_BUCKET: R2Bucket;
 }
 
 async function sendEmail({ name, email, message }: contactProps) {
-  const send_request = new Request(process.env.EMAIL_API_URL!, {
+  const send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -27,8 +20,8 @@ async function sendEmail({ name, email, message }: contactProps) {
         {
           to: [
             {
-              email: process.env.EMAIL_RECIPIENT,
-              name: process.env.EMAIL_RECIPIENT_NAME,
+              email: "matthew@beardsley.com.au",
+              name: "Olivia",
             },
           ],
         },
