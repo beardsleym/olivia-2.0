@@ -29,7 +29,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({}) => {
   };
   const handleSubmit = async (event: any) => {
     setIsLoading(true);
-    const url = "https://olivia-contact-form.uv.workers.dev";
+    const url = "https://olivia-contact.uv.workers.dev";
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
