@@ -84,7 +84,7 @@ function handleOptions(request: Request) {
   }
 }
 const submitHandler = async (request: Request) => {
-  const { name, email, message } = await request.json();
+  const { name, email, message }: any = await request.json();
   if (!email?.length || !name?.length || !message?.length) {
     return new Response(null, {
       status: 400,

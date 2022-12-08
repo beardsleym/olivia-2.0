@@ -1,6 +1,5 @@
 import {
   Flex,
-  Box,
   Divider,
   IconButton,
   useColorModeValue,
