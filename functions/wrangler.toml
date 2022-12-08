@@ -1,0 +1,8 @@
+name = "olivia-contact"
+main = "src/index.ts"
+compatibility_date = "2022-12-08"
+
+[vars]
+EMAIL_RECIPIENT = "matthew@beardsley.com.au"
+EMAIL_RECIPIENT_NAME = "Olivia"
+EMAIL_API_URL="https://api.mailchannels.net/tx/v1/send"
