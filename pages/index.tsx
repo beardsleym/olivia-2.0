@@ -12,7 +12,7 @@ import { Body } from "../components/Body";
 import { Socials } from "../components/Socials";
 
 export default function Home() {
-  const bg = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("gray.100", "gray.800");
   const slides = Array.from(Array(10).keys()).map(
     (slide) => `/avif/${slide + 1}.avif`
   );
@@ -36,20 +36,26 @@ export default function Home() {
           <Body />
         </Flex>
       </Flex>
-      <Box px={{ base: 5, md: 32 }}>
-        <Heading
-          variant="h3"
-          fontWeight="semibold"
-          size="lg"
-          color={useColorModeValue("blackAlpha.800", "white")}
-          mt={10}
-          mb={3}
-        >
-          Portfolio
-        </Heading>
-        {/* IMAGE GRID */}
-        <ImageGrid />
-        <Footer />
+      <Box>
+        <Box px={{ base: 5, md: 32 }}>
+          <Heading
+            variant="h3"
+            fontWeight="semibold"
+            size="lg"
+            color={useColorModeValue("blackAlpha.800", "white")}
+            mt={10}
+            mb={3}
+          >
+            Portfolio
+          </Heading>
+          {/* IMAGE GRID */}
+          <ImageGrid />
+        </Box>
+        <Box backgroundColor={useColorModeValue("white", "gray.900")} mt={20}>
+          <Box px={5}>
+            <Footer />
+          </Box>
+        </Box>
       </Box>
     </Container>
   );

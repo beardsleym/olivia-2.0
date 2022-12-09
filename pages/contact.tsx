@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <Container maxW="7xl" padding={0} bg={bg}>
       <Box
-        backgroundColor={useColorModeValue("gray.200", "gray.800")}
+        backgroundColor={useColorModeValue("gray.100", "gray.800")}
         pb={10}
         px={5}
       >
@@ -73,7 +73,7 @@ export default function Home() {
         </Center>
       </Box>
       <Box
-        backgroundColor={useColorModeValue("white", "gray.900")}
+        backgroundColor={useColorModeValue("gray.50", "gray.900")}
         py={10}
         px={5}
       >
@@ -81,7 +81,7 @@ export default function Home() {
           <ContactForm />
         </Center>
       </Box>
-      <Box px={5}>
+      <Box px={5} backgroundColor={useColorModeValue("gray.100", "gray.800")}>
         <Footer />
       </Box>
     </Container>
