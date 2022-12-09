@@ -6,8 +6,11 @@ export interface contactProps {
 }
 
 interface Env {
-  //
+  EMAIL_RECIPIENT: string;
+  EMAIL_RECIPIENT_NAME: string;
 }
+
+let environmentVariables: Env;
 
 async function sendEmail({ name, email, message }: contactProps) {
   const send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
@@ -20,8 +23,8 @@ async function sendEmail({ name, email, message }: contactProps) {
         {
           to: [
             {
-              email: "matthew@beardsley.com.au",
-              name: "Olivia",
+              email: environmentVariables.EMAIL_RECIPIENT,
+              name: environmentVariables.EMAIL_RECIPIENT_NAME,
             },
           ],
         },
@@ -105,6 +108,8 @@ async function handleRequest(request: Request) {
 export default {
   async fetch(request: Request, env: Env, ctx: any): Promise<Response> {
     console.log(request, env, ctx);
+    environmentVariables = env;
+    console.log(environmentVariables.EMAIL_RECIPIENT);
     if (request.method === "OPTIONS") {
       // Handle CORS preflight requests
       return handleOptions(request);
